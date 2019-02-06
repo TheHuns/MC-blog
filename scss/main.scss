@@ -1,0 +1,169 @@
+$primary-text: #4f4b4e;
+$secondary-text: #6bc097;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  .secondary {
+    color: $secondary-text;
+  }
+}
+
+header {
+  width: 100%;
+  position: sticky;
+  font-family: "Roboto", sans-serif;
+  height: 17vh;
+
+  .upper-header {
+    color: #4f4b4e;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    h1 {
+      padding: 1rem 3rem;
+    }
+
+    .newsletter-inner {
+      float: right;
+      padding: 1rem 2rem;
+
+      label {
+        padding-right: 0.5rem;
+      }
+      input,
+      button {
+        padding: 0.2rem 0.3rem;
+        border-radius: 5%;
+      }
+      button {
+        background: $secondary-text;
+        color: #fff;
+      }
+    }
+  }
+
+  .lower-header {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    nav {
+      padding-left: 1rem;
+      ul {
+        display: flex;
+        list-style: none;
+
+        li {
+          padding: 1rem 2rem;
+
+          a {
+            text-decoration: none;
+            color: #4f4b4e;
+            font-weight: 700;
+          }
+          a:hover {
+            color: $secondary-text;
+          }
+        }
+      }
+    }
+    .media-links {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 1rem;
+
+      i {
+        color: $primary-text;
+        padding: 0.4rem 1rem;
+      }
+      i:hover {
+        color: $secondary-text;
+      }
+    }
+
+    hr {
+      width: 90%;
+      margin: auto;
+    }
+  }
+}
+
+main {
+  .showcase {
+    width: 100%;
+    height: 83vh;
+    background: url(../img/background.jpg);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 150px);
+    grid-template-areas:
+      "t t a"
+      "t t b"
+      "t t c";
+    grid-gap: 3rem;
+    padding: 2rem;
+    color: #4f4b4e;
+    font-family: "Roboto", sans-serif;
+
+    div {
+      background: #f4f4f4;
+      border: 1px solid $secondary-text;
+      border-radius: 2%;
+    }
+
+    .text-box {
+      grid-area: t;
+      padding: 2rem;
+
+      p {
+        padding: 1rem 0;
+      }
+      a {
+        text-decoration: none;
+        color: #4f4b4e;
+        font-weight: 700;
+      }
+      a:hover {
+        color: $secondary-text;
+      }
+    }
+
+    .pic-box {
+      text-align: center;
+      padding: 0.5rem;
+      a {
+        text-decoration: none;
+        color: $primary-text;
+      }
+      h3:hover {
+        color: $secondary-text;
+      }
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+    }
+    .box1 {
+      grid-area: a;
+    }
+    .box2 {
+      grid-area: b;
+    }
+    .box3 {
+      grid-area: c;
+    }
+  }
+}
+
+footer {
+  height: 500px;
+}
+
+// handheld screen
+@media (max-width: 600px) {
+  .upper-header {
+    grid-template-columns: 1fr;
+    grid-template-rows: 25% 25%;
+  }
+}
